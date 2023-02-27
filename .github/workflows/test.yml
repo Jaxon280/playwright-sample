@@ -7,6 +7,12 @@ on:
     types: [closed]
 
 jobs:
+  fail:
+    name: Sleep
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Sleep
+      run: sleep 600
   test:
     name: Build WASM for fita and lita
     runs-on: ubuntu-22.04
