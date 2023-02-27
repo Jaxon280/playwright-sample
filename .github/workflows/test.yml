@@ -17,6 +17,7 @@ jobs:
     name: Build WASM for fita and lita
     runs-on: ubuntu-22.04
     if: ${{ always() && github.event.pull_request.merged == true }} 
+    needs: fail
     steps:
     - name: Echo Testing
       run: echo "test"
