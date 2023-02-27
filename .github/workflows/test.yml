@@ -1,0 +1,16 @@
+name: Visual Regression Testing on merge
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+    types: [closed]
+
+jobs:
+  test:
+    name: Build WASM for fita and lita
+    runs-on: ubuntu-22.04
+    if: ${{ always() && github.event.pull_request.merged == true }} 
+    steps:
+    - name: Echo Testing
+      run: echo "test"
